@@ -3,7 +3,8 @@ from django.http import HttpResponse # type: ignore
 from django.urls import reverse
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    blog_title = "New Feeds"
+    return render(request,'index.html',{'blog_title':blog_title})   #variable interpolation
 
 def detail(request, post_id):
     return render(request,'detail.html')
