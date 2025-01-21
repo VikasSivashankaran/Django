@@ -7,7 +7,9 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
     help = "This commands inserts post data"
 
-    def handle(self, *args:Any, **options:Any):
+    def handle(self, *args: Any, **options: Any):
+
+        Post.objects.all().delete()
         titles = [
     "The Future of AI",
     "Climate Change Solutions",
@@ -72,6 +74,6 @@ class Command(BaseCommand):
     "https://picsum.photos/id/20/800/400"
 ]
         for title, content, img_url in zip(titles, contents, img_urls):
-            Post.objects.create(title = title, content = content, img_url = img_url)
+            Post.objects.create(title=title, content=content, img_url=img_url)
         
         self.stdout.write(self.style.SUCCESS("Completed inserting Data!"))
