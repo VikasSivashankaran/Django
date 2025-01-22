@@ -8,5 +8,7 @@ urlpatterns = [
     #path("post/detail",views.detail,name="detail")
     path("post/<int:post_id>",views.detail, name="detail"),
     path("new_something_url",views.new_url_view, name="new_page_url"),#something
-    path("old_url",views.old_url_redirect, name="old_url")
+    path("old_url",views.old_url_redirect, name="old_url"),
+    path("contact",views.contact_view, name="contact")
+
 ]
